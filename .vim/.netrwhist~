@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/etc/X11/xinit'
+let g:netrw_dirhist_2='/home/caesar/bin'
+let g:netrw_dirhist_3='/etc/xdg/awesome'
+let g:netrw_dirhist_4='/home/caesar/.lftp'
+let g:netrw_dirhist_5='/home/caesar/.ssh'
+let g:netrw_dirhist_6='/home/caesar/code/ecell2/content'
+let g:netrw_dirhist_7='/home/caesar/.vimperator'
+let g:netrw_dirhist_8='/home/caesar/others/gcc-4.4.3/INSTALL'
+let g:netrw_dirhist_9='/home/caesar/code/ecell2/templates'
