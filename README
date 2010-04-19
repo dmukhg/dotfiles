@@ -1,4 +1,8 @@
 This is a backup of all the important initial config files
 in my home folder. Please note:
-    If you do use my .vimrc and do use the leo colorscheme
-    or any of the other plugins do download the .vim directory
+   - If you do use my .vimrc and do use the leo colorscheme
+     or any of the other plugins do download the .vim directory
+   - plugin shell scripts in the awesome directory are still in
+     development using them might render your machine useless if
+     you are using only awesome and no other session like gnome 
+     or k

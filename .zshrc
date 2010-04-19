@@ -16,4 +16,4 @@ alias storage="sudo ntfs-3g /dev/sda5 /media/storage/"
 alias windows="sudo ntfs-3g /dev/sda1 /media/windows/"
 alias pinax="source /home/caesar/code/pinax/bin/activate"
 alias rt="rm *~"
-
+alias lgt="gnome-session-save --logout"
