@@ -45,7 +45,7 @@ Mrxvt.tabForeground:            #9a9a9a
 ## ---------------------- SCROLLING / SCROLLBAR OPTIONS ----------------------- #
 ##
 #
-Mrxvt.scrollBar:                true
+Mrxvt.scrollBar:                False 
 Mrxvt.scrollbarRight:           False
 Mrxvt.scrollbarStyle:           rxvt
 #
@@ -131,7 +131,7 @@ Mrxvt.cursorColor2:             #000000
 #
 ## Setup colors for a black background.
 Mrxvt.background:               #000000
-Mrxvt.foreground:               #FFFFFF
+Mrxvt.foreground:               #ffffff
 #
 Mrxvt.color0:                   #000000
 Mrxvt.color1:                   #af0000
@@ -176,6 +176,9 @@ Mrxvt.termName:                 xterm-256color
 ## Default title of each tab.
 Mrxvt.tabTitle:                 terminal 
 #
+
+Mrxvt.showMenu:                 False 
+
 ## Border to leave around terminal text
 Mrxvt.internalBorder:           2
 #
