@@ -102,7 +102,7 @@ set showcmd
 
 " =========== Other shortcuts ===========
 "Indent all lines
-map ia mzggVG='z
+"map ia mzggVG='z
 
 "Switch to current dir
 map CD :cd %:p:h
@@ -153,6 +153,6 @@ set si
 "C-style indeting
 set cindent
 "Wrap lines
-"set wrap
+set nowrap
 
 

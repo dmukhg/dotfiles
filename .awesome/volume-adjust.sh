@@ -1,4 +1,5 @@
-. ~/.awesome/volume-values.sh
+. /home/caesar/.awesome/volume-values.sh
+
 
 if [ "$1" == "up" ]
 then 

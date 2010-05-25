@@ -12,8 +12,8 @@ handle() {
 
 }
 
-cardid = 0
-channel = "Master"
-adjust = 5
-widget = "volume_control"
-speed = 10
+cardid=0
+channel="Master"
+adjust=5
+widget="volume_control"
+speed=10

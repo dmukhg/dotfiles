@@ -9,14 +9,23 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-alias snd=alsamixer
 # End of lines configured by zsh-newuser-install
 # Begin my configs
-alias ls="ls -l --color=auto"
+alias ls="ls -l --color=auto --hide='*.pyc'"
+alias snd=alsamixer
 alias storage="sudo ntfs-3g /dev/sda5 /media/storage/"
 alias windows="sudo ntfs-3g /dev/sda1 /media/windows/"
+alias halt="sudo shutdown -Ph 0"
+alias reboot="sudo shutdown -r 0"
+alias hib="sudo hibernate"
 alias rt="rm *~"
+alias sl="ls"
 
-export http_proxy = 10.3.100.148:8080
+export PYTHONPATH=$PYTHONPATH:~/code
+
+# export http_proxy=10.3.100.148:8080
 # End of my configs
-
+function init(){
+awsetbg -r ~/graphics/wallpapers
+sudo ntfs-3g /dev/sda5 /media/storage
+}

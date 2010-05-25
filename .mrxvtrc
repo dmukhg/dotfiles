@@ -171,7 +171,7 @@ Mrxvt.color15:                  #d7d7d7
 #
 ## The value of the TERM environment variable. Default is rxvt. If you have
 ## trouble, try uncommenting the following line.
-Mrxvt.termName:                 xterm-256color 
+Mrxvt.termName:                 mrxvt-256color 
 #
 ## Default title of each tab.
 Mrxvt.tabTitle:                 terminal 
@@ -183,7 +183,7 @@ Mrxvt.showMenu:                 False
 Mrxvt.internalBorder:           2
 #
 ## Make double click select whole URL's
-Mrxvt.cutChars:                 :=/~#@?%&_-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0abcdefghijklmnopqrstuvwxyz
+#Mrxvt.cutChars:                 :=/~#@?%&_-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0abcdefghijklmnopqrstuvwxyz
 #
 ## Blank the mouse pointer on keystrokes or after 10 seconds of inactivity.
 Mrxvt.pointerBlank:             True

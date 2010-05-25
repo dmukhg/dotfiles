@@ -7,5 +7,4 @@ gnome-power-manager &
 ~/.awesome/volume-monitor.sh &
 nm-applet &
 bluetooth-applet &
-conky &
 exec awesome
