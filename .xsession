@@ -7,4 +7,5 @@ gnome-power-manager &
 ~/.awesome/volume-monitor.sh &
 nm-applet &
 bluetooth-applet &
-exec awesome
+awesome &
+exec ck-launch-session gnome-session

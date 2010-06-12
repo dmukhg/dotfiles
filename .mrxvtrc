@@ -94,7 +94,7 @@ Mrxvt.shading:                  75
 ## ---------------------------------- FONTS ----------------------------------- #
 ##
 Mrxvt.xft:                      1
-Mrxvt.xftFont:                  Crystal
+Mrxvt.xftFont:                  Crystal 
 Mrxvt.xftSize:                  10
 Mrxvt.xftAntialias:             1
 #
