@@ -1,2 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/caesar/interesting'
+let g:netrw_dirhist_2='/home/caesar/code/ecell2/conman/admin'
+let g:netrw_dirhist_3='/home/caesar/code/indiakhelo/genelia'
+let g:netrw_dirhist_4='/home/caesar'
+let g:netrw_dirhist_5='/home/caesar/.lftp'
+let g:netrw_dirhist_6='/home/caesar'

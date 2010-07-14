@@ -14,11 +14,15 @@ setopt autocd
 
 autoload -U promptinit
 promptinit
-prompt walters white
+prompt walters cyan
 
 PS1="%n@%F{green}%m%u%f>"
+
+# add colors
+TERM=xterm-256color
+eval `dircolors -b ~/.dircolors`
 # little aliases
-alias ls="ls -l --color=auto --hide='*.pyc' -X"
+alias ls="ls -l --color=auto -X"
 alias snd=alsamixer
 alias storage="sudo ntfs-3g /dev/sda5 /media/storage/"
 alias windows="sudo ntfs-3g /dev/sda1 /media/windows/"
@@ -33,7 +37,7 @@ alias dslp="xset dmps force standby"
 # alias for t
 alias t='python ~/code/t/t.py --task-dir ~/.tasks --list'
 
-#export PYTHONPATH=$PYTHONPATH:~/code
+export PYTHONPATH=$PYTHONPATH:~/code
 export PATH=$PATH:/usr/lib/Komodo-IDE-5/bin/
 export PATH=$PATH:/usr/local/lib/Komodo-Edit-5/bin
 

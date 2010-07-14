@@ -95,7 +95,7 @@ Mrxvt.shading:                  75
 ##
 Mrxvt.xft:                      1
 Mrxvt.xftFont:                  Crystal 
-Mrxvt.xftSize:                  10
+Mrxvt.xftSize:                  9
 Mrxvt.xftAntialias:             1
 #
 ## The options below are better set using ~/.fonts.config. Mrxvt will use the

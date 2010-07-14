@@ -18,12 +18,10 @@ map sa :%y +
 
 
 " Nice window title
-if has('title') && (has('gui_running') || &title)
-    set titlestring=
-    set titlestring+=%f\                     " file name
-    set titlestring+=%h%m%r%w                " flags
-    set titlestring+=\ -\ %{v:progname}      " program name
-endif
+set title
+set titlestring+=%f\                     " file name
+set titlestring+=%h%m%r%w                " flags
+set titlestring+=\ -\ %{v:progname}      " program name
 
 "restore your cursor position in a file over several editing sessions.
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -94,10 +92,10 @@ set showcmd
 
 " ========= Status Line =================
 "Use statusline in every window
-"set laststatus=2
+set laststatus=2
 
 "Format the statusline
-"set statusline=\ File:\%F%m%r%h\ %w\ \ \ Current\ dir:\%r%{getcwd()}%h
+"set statusline+=\ File:\%F%m%r%h\ %w\ \ \ Current\ dir:\%r%{getcwd()}%h
 
 
 " =========== Other shortcuts ===========
@@ -149,10 +147,13 @@ set noar
 "Auto indent
 set ai
 "Smart indet
-set si
+"set si
 "C-style indeting
 set cindent
 "Wrap lines
-set nowrap
+set wrap
 
+" Set format options
+set textwidth=70
+set formatoptions=crqn
 
