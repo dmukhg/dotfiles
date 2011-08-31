@@ -1,0 +1,2 @@
+#!/bin/sh
+cp -rf ~/.awesome ~/.conkyrc ~/.fonts ~/.mrxvtrc ~/.ssh ~/.vim ~/.vimrc ~/.Xmodmap ~/.xsession ~/.zshrc ./
