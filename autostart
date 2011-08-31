@@ -1,0 +1,6 @@
+nm-applet &
+xmodmap /home/caesar/.Xmodmap &
+xrdb -load /home/caesar/.Xdefaults &
+export DISPLAY=:0.0; feh --bg-fill /media/zacharius/pictures/wallpaper1 &
+export DISPLAY=:0.1; feh --bg-fill /media/zacharius/pictures/wallpaper2 &
+exit 0
