@@ -7,12 +7,15 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
+-- MPD library
+require("lib/mpd")
+
 -- Load Debian menu entries
 require("debian.menu")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/home/schatten/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm -fa \"Crystal\""
@@ -47,8 +50,8 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
-tags[1] = awful.tag({ "dev", "design", "git", "servers" }, 1, layouts[2])
-tags[2] = awful.tag({ "dev", "read", "internet", "media", "four", "five" }, 2, layouts[2])
+tags[2] = awful.tag({ "dev", "design", "git", "servers" }, 2, layouts[2])
+tags[1] = awful.tag({ "dev", "read", "internet", "media", "four", "five" }, 1, layouts[2])
 -- }}}
 
 -- {{{ Menu
@@ -301,7 +304,7 @@ awful.rules.rules = {
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 3 of screen 2.
     { rule = { class = "Firefox" },
-      properties = { tag = tags[2][3] } },
+      properties = { tag = tags[1][3] } },
 }
 -- }}}
 
@@ -335,6 +338,12 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
--- autostart functionality
 
+-- mpd functionality
+mpc = mpd.new({ hostname="localhost" })
+mpdicon = widget({ type = "imagebox" })
+mpdicon.image = image(beautiful.widget_music)
+mpdbox = {}
+
+-- autostart functionality
 awful.util.spawn_with_shell("~/.autostart")
