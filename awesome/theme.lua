@@ -1,6 +1,8 @@
 -------------------------------
 --  "Zenburn" awesome theme  --
 --    By Adrian C. (anrxc)   --
+--  With modifications for increased indication property in case of
+--  multiple screes -- Dipanjan Mukherjee (dmulog.in)
 -------------------------------
 
 -- Alternative icon sets and widget icons:
@@ -15,17 +17,17 @@ theme.font      = "sans 8"
 
 -- {{{ Colors
 theme.fg_normal = "#DCDCCC"
-theme.fg_focus  = "#eeeeee"
+theme.fg_focus  = "#333333"
 theme.fg_urgent = "#CC9393"
 theme.bg_normal = "#3F3F3F"
-theme.bg_focus  = "#1F82BF"
+theme.bg_focus  = "#96A882"
 theme.bg_urgent = "#3F3F3F"
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = "2"
+theme.border_width  = "1"
 theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#1F82BF"
+theme.border_focus  = "#96A882"
 theme.border_marked = "#CC9393"
 -- }}}
 
