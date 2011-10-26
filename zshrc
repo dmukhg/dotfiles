@@ -1,5 +1,5 @@
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/caesar/.zshrc'
+zstyle :compinstall filename '/home/schatten/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -32,17 +32,16 @@ alias sl="ls"
 alias g-node="sudo openvpn ~/.g-node/g-node-proxy.conf"
 alias mp="ncmpc"
 alias journal="vim ~/public/links"
+alias blog="cd ~/public/blog"
+alias wishlist="vim ~/public/wishlist"
 
 # alias to call sorry
 alias sorry="python ~/code/sorry/sorry/main.py"
 
-export PATH=$PATH:/home/caesar/bin:/media/zacharius/installers/linux/google_appengine
-
-export XDG_DESKTOP_DIR=/home/caesar/.desktop
-# hopefully, this will stop the Desktop Folder from popping up.
+export PATH=$PATH:/home/schatten/bin:/media/zacharius/installers/linux/google_appengine
 
 export http_proxy=144.16.192.245:8080
-export https_proxy=144.16.192.245:8080
+export https_proxy=144.16.192.247:8080
 # End of my configs
 
 # ===================== Mark functions =======================
@@ -61,10 +60,17 @@ function u(){
     echo 'Directory Marked Reset to home'
     cd ~
 }
+# when within some other directory, calling g takes you to the marked
+# directory.
+function g(){
+  read MARKDIR < ~/.mark_dir
+  cd $MARKDIR
+}
+
 read MARKDIR < ~/.mark_dir
 cd $MARKDIR
 
 # ===================== Mark functions =======================
 
 # Setting up email
-MAIL=/var/spool/mail/caesar && export MAIL
+#MAIL=/var/spool/mail/caesar && export MAIL
