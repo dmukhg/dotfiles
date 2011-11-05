@@ -97,6 +97,7 @@ set laststatus=2
 "Format the statusline
 "set statusline+=\ File:\%F%m%r%h\ %w\ \ \ Current\ dir:\%r%{getcwd()}%h
 
+set highlight=si
 
 " =========== Other shortcuts ===========
 "Indent all lines
@@ -129,9 +130,9 @@ endif
 " ========= Text Options ========
 "In Insert mode: Use the appropriate number of spaces to insert a 
 set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
 " ========== File options =======
 "Turn backup off
