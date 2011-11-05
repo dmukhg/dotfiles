@@ -22,7 +22,7 @@ PS1="%n@%F{green}%m%u%f>"
 #TERM=xterm-256color
 eval `dircolors -b ~/.dircolors`
 # little aliases
-alias ls="ls -l --color=auto -X --ignore='*.o'"
+alias ls="ls -l --group-directories-first --color=auto -X --ignore='*.o'"
 alias snd=alsamixer
 alias halt="sudo shutdown -Ph 0"
 alias reboot="sudo shutdown -r 0"
@@ -34,15 +34,22 @@ alias mp="ncmpc"
 alias journal="vim ~/public/links"
 alias blog="cd ~/public/blog"
 alias wishlist="vim ~/public/wishlist"
+alias q="exit"
 
 # alias to call sorry
 alias sorry="python ~/code/sorry/sorry/main.py"
 
-export PATH=$PATH:/home/schatten/bin:/media/zacharius/installers/linux/google_appengine
+export PATH=$PATH:/home/schatten/bin:/media/zacharius/installers/linux/google_appengine:/usr/lib/android-sdk/tools:/usr/lib/android-sdk/platform-tools
 
 export http_proxy=144.16.192.245:8080
 export https_proxy=144.16.192.247:8080
 # End of my configs
+
+# Delete ~/Desktop which keeps on popping up for some reason. I
+# suspect firefox but what the hell. This method doesn't seem too
+# memory or resource intensive. But, got to come back to this someday.
+# TODO
+rm -rf /home/schatten/Desktop
 
 # ===================== Mark functions =======================
 # calling mark, sets up a cross process file ~/.mark_dir with 
