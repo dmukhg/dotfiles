@@ -1,0 +1,5 @@
+# adding other hosts as necessary for g-node
+172.24.10.81  hal01.g-node.pri
+172.24.10.90  hal10.g-node.pri
+172.24.10.90  portal.g-node.pri
+172.24.10.90  git.g-node.pri
