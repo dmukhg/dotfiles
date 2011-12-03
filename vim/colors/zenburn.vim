@@ -297,7 +297,7 @@ if &t_Co > 255
     hi Structure       ctermfg=229   cterm=bold
     hi Tag             ctermfg=181   cterm=bold
     hi Title           ctermfg=7     ctermbg=234     cterm=bold
-    hi Todo            ctermfg=108   ctermbg=234     cterm=bold
+    hi Todo            ctermfg=211   ctermbg=234     cterm=bold
     hi Typedef         ctermfg=253   cterm=bold
     hi Type            ctermfg=187   cterm=bold
     hi Underlined      ctermfg=188   ctermbg=234     cterm=bold
