@@ -124,7 +124,6 @@ map q :qa
 " if using a version 6 vim, enable folding
 if version >= 600
     set foldenable
-    set foldmethod=marker
 endif
 
 " ========= Text Options ========
@@ -166,3 +165,5 @@ map ml bi[<Esc>ea][]<Esc>i
 " for some reason, some included file causes compatibility to be
 " called, this is the only thing that makes vim see sense.
 set nocp
+
+set clipboard=unnamed
