@@ -168,6 +168,10 @@ set nocp
 
 set clipboard=unnamed
 
+" Tabularize shortcuts
+vmap t: :Tabularize /:<return>
+vmap t= :Tabularize /=<return>
+
 " javascript folding
 function! JavaScriptFold() 
   setl foldmethod=syntax
