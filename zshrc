@@ -39,6 +39,7 @@ alias q="exit"
 alias sorry="python ~/code/schatten/sorry/sorry/main.py"
 
 export PATH=$PATH:/home/schatten/bin:/media/zacharius/installers/linux/google_appengine:/usr/lib/android-sdk/tools:/usr/lib/android-sdk/platform-tools
+export TEXINPUTS=$TEXINPUTS:/usr/share/tex-common
 
 export http_proxy=http://144.16.192.245:8080/
 export https_proxy=http://144.16.192.247:8080/
