@@ -77,7 +77,7 @@ function g(){
 read MARKDIR < ~/.mark_dir
 cd $MARKDIR
 
-# ===================== Mark functions =======================
+# ===================== End Mark functions ===================
 
-# Setting up email
-#MAIL=/var/spool/mail/caesar && export MAIL
+# === Vi Mode editing enable
+bindkey -v
