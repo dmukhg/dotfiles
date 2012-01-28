@@ -81,3 +81,6 @@ cd $MARKDIR
 
 # === Vi Mode editing enable
 bindkey -v
+
+# === python SimpleHTTPServer shortcut
+alias shttp='python -m SimpleHTTPServer'
