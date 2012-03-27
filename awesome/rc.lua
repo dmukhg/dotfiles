@@ -2,32 +2,46 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
+
 -- Theme handling library
 require("beautiful")
+
 -- Notification library
 require("naughty")
 
--- MPD library
-require("lib/mpd")
+-- Widget library
+require("vicious")
 
 -- Load Debian menu entries
 require("debian.menu")
 
+require("lib")
+
+-- Function aliases
+local exec  = function(cmd) awful.util.spawn(cmd, false) end
+local sexec = awful.util.spawn_with_shell
+local match = awful.rules.match
+
+config = {}
+
+-- Global settings 
+config.global = {
+  theme    = awful.util.getdir("config") .. "/theme.lua",
+  terminal = "xterm -fa \"Crystal\" -fs 11",
+  modkey   = "Mod4",
+  browser  = "firefox"
+}
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/schatten/.config/awesome/theme.lua")
+beautiful.init( config.global.theme )
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm -fa \"Crystal\" -fs 11"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+modkey = config.global.modkey
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
@@ -296,15 +310,27 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
     -- Set Firefox to always map on tags number 3 of screen 2.
     { rule = { class = "Firefox" },
       properties = { tag = tags[1][3] } },
+    -- Gvim always maximized and on tag number 0, 1
+    { rule = { class = "Gvim" }, 
+      properties = { tag = tags[2][1],
+                     switchtotag = true, 
+                     maximized_horizontal=true,
+                     maximized_vertical=true,
+                   },
+    },
+    -- Terminal properties
+    { rule = { instance = "term" },
+      properties = { floating = true },
+      callback = function (c) 
+        local screengeom = screen[mouse.screen].workarea
+        width = screengeom.width * 0.45
+        height = screengeom.height * 0.45
+        c:geometry({ x = 20, y = 20, width = width, height = height })
+      end,
+    },
 }
 -- }}}
 
@@ -338,12 +364,6 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
--- mpd functionality
-mpc = mpd.new({ hostname="localhost" })
-mpdicon = widget({ type = "imagebox" })
-mpdicon.image = image(beautiful.widget_music)
-mpdbox = {}
 
 -- autostart functionality
 awful.util.spawn_with_shell("~/.autostart")
