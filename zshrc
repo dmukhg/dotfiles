@@ -36,7 +36,7 @@ alias idea="cd ~/public/idealab"
 alias q="exit"
 
 # editor
-alias g="gvim"
+alias g="gvim --remote-tab-silent"
 
 # alias to call sorry
 alias sorry="python ~/code/schatten/sorry/sorry/main.py"
@@ -54,12 +54,11 @@ export https_proxy=http://144.16.192.247:8080/
 # TODO
 rm -rf /home/schatten/Desktop
 
-# ===================== Mark functions =======================
-# calling mark, sets up a cross process file ~/.mark_dir with 
-# the value of the current directory
-# hence forth, any terminal you open will be directed to this 
-# directory
-function m(){
+# ===================== Mark functions ======================= 
+# calling mark, sets up a cross process file ~/.mark_dir with the
+# value of the current directory hence forth, any terminal you open
+# will be directed to this directory
+function m(){ 
     printf `pwd` > ~/.mark_dir
     echo 'Directory Marked'
 }
