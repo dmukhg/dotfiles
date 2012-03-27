@@ -35,6 +35,9 @@ alias blog="cd ~/public/blog"
 alias idea="cd ~/public/idealab"
 alias q="exit"
 
+# editor
+alias g="gvim"
+
 # alias to call sorry
 alias sorry="python ~/code/schatten/sorry/sorry/main.py"
 
