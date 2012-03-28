@@ -36,7 +36,7 @@ alias idea="cd ~/public/idealab"
 alias q="exit"
 
 # editor
-alias g="gvim --remote-tab-silent"
+alias e="gvim --remote-tab-silent"
 
 # alias to call sorry
 alias sorry="python ~/code/schatten/sorry/sorry/main.py"
@@ -54,33 +54,89 @@ export https_proxy=http://144.16.192.247:8080/
 # TODO
 rm -rf /home/schatten/Desktop
 
-# ===================== Mark functions ======================= 
-# calling mark, sets up a cross process file ~/.mark_dir with the
-# value of the current directory hence forth, any terminal you open
-# will be directed to this directory
-function m(){ 
-    printf `pwd` > ~/.mark_dir
-    echo 'Directory Marked'
-}
-# to turn this off, call unmark or call mark on some other directory
-# unmark resets mark_dir to the home directory
-function u(){
-    printf ~ > ~/.mark_dir
-    echo 'Directory Marked Reset to home'
-    cd ~
-}
-# when within some other directory, calling g takes you to the marked
-# directory.
-function g(){
-  read MARKDIR < ~/.mark_dir
-  cd $MARKDIR
+# Shell bookmarks https://gist.github.com/835531
+
+function _uh { [[ -z $DEV ]]; return $? }
+
+function userroot {
+  if ! _uh; then echo $DEV;
+  else echo $HOME; fi
 }
 
-read MARKDIR < ~/.mark_dir
-cd $MARKDIR
+function _sdirname {
+  echo "$(userroot)/.sdirs"
+}
 
-# ===================== End Mark functions ===================
+function _sglobalname {
+  echo "${HOME}/.sdirs"
+}
 
+function _ss_for_arg {
+  local d n;
+  if [[ -z $1 ]]; then return; fi
+  if [[ "${1[0,1]}" == "+" ]]; then d="$(_sglobalname)"; n="${1[2,-1]}";
+  else d="$(_sdirname)"; n="$1"; fi
+  echo "local sdir arg; sdir=\"$d\"; arg=\"$n\";"
+}
+
+# Shell Bookmarks (inspired by rpetrich.)
+function dbg {
+  if [[ -z $1 ]]; then return; fi
+  eval $(_ss_for_arg $1);
+  echo $sdir;
+  echo $arg;
+}
+function s {
+    if [[ -z $1 ]]; then return; fi
+    eval $(_ss_for_arg $1);
+    if [[ -f "$sdir" ]]; then
+      grep -v "^export _BOOKMARK_$arg" "${sdir}" > "${sdir}1"
+      mv "${sdir}1" "${sdir}"
+    fi
+    echo "export _BOOKMARK_$arg=$PWD" >> "${sdir}"
+}
+
+function l {
+  if [[ -s $(_sdirname) ]]; then
+    sed -e 's/^export _BOOKMARK_\([^=]*\)=\(.*\)$/\1 (\2)/g' "$(_sdirname)" | sort
+  fi
+  if ! _uh; then
+    if [[ -s $(_sglobalname) ]]; then
+      sed -e 's/^export _BOOKMARK_\([^=]*\)=\(.*\)$/+\1 (\2)/g' "$(_sglobalname)" | sort
+    fi
+  fi
+}
+
+function g {
+  eval $(_ss_for_arg $1)
+  . "$sdir"
+  cd $(eval echo $(echo \$_BOOKMARK_$arg))
+}
+
+function d {
+  if [[ -z $1 ]]; then return; fi
+  eval $(_ss_for_arg $1)
+  if [[ -f "$sdir" ]]; then
+    grep -v "^export _BOOKMARK_$arg" "${sdir}" > "${sdir}1"
+    mv "${sdir}1" "${sdir}"
+  fi
+}
+
+function _gcomp {
+  local descs globals;
+  descs=();
+  globals=();
+  sed -e 's/^export _BOOKMARK_\([^=]*\)=\(.*\)$/\1:\2/g' "$(_sdirname)" | sort | while read line; do
+    descs[$(($#descs+1))]="$line"
+  done
+  if ! _uh; then
+    sed -e 's/^export _BOOKMARK_\([^=]*\)=\(.*\)$/+\1:\2/g' "$(_sglobalname)" | sort | while read line; do
+      globals[$(($#globals+1))]="$line"
+    done
+  fi
+  _describe -t bookmarks "shell bookmark" descs; _describe -t bookmarks "global bookmark" globals
+}
+compdef _gcomp g
 # === Vi Mode editing enable
 bindkey -v
 
