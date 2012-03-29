@@ -137,6 +137,25 @@ function _gcomp {
   _describe -t bookmarks "shell bookmark" descs; _describe -t bookmarks "global bookmark" globals
 }
 compdef _gcomp g
+
+function m() {
+# mark this directory to be opened each time a new terminal is
+# spawned.
+  printf `pwd` > ~/.mark_dir
+  echo 'Directory marked'
+}
+
+function u() {
+# unmark directory and open the ~ directory each time a new terminal
+# is spawned. 
+  printf ~ > ~/.mark_dir
+  echo 'Directory Mark reset to home'
+  cd ~
+}
+
+# The real cd function. 
+read MARKDIR < ~/.mark_dir
+cd $MARKDIR
 # === Vi Mode editing enable
 bindkey -v
 
