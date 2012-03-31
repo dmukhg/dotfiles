@@ -2,30 +2,12 @@
 layout: default
 title: Dipanjan Mukherjee
 ---
-<html>
-  <head>
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
-  </head>
-  <body>
-    <div class="page" id="header">
-      <a href="/" class="title">Dipanjan Mukherjee</a>
-      <a href="/" class="extra">home</a>
-      <a href="http://github.com/schatten/" class="extra">orojects</a>
-      <a href="resume" class="extra">resume</a>
-    </div>
-
-    <div class="page" id="index">
-      <h1>Blog Posts</h1>
-      <ul class="index">
+<div class="page" id="index">
+  <h1>Blog Posts</h1>
+  <ul class="index">
 {% for post in site.posts %}
 <li><a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
-      </ul>
-    </div>
-    </div>
-  </body>
-</html>
+  </ul>
+</div>
 
