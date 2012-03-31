@@ -2,12 +2,10 @@
 layout: default
 title: Dipanjan Mukherjee
 ---
-<div class="page" id="index">
-  <h1>Blog Posts</h1>
-  <ul class="index">
-{% for post in site.posts %}
-<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-  </ul>
-</div>
+<h1>Blog Posts</h1>
+<ul class="index">
+  {% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
 
