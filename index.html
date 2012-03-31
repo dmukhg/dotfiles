@@ -16,7 +16,7 @@
     <div class="page" id="index">
       <h1>Blog Posts</h1>
       <ul class="index">
-{% for post in site.posts %}
+{% for post in site.dotfiles.posts %}
 <li><a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
       </ul>
