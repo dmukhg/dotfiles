@@ -315,9 +315,7 @@ awful.rules.rules = {
       properties = { tag = tags[1][3] } },
     -- Gvim always maximized and on tag number 0, 1
     { rule = { class = "Gvim" }, 
-      properties = { tag = tags[2][1],
-                     switchtotag = true, 
-                     maximized_horizontal=true,
+      properties = { maximized_horizontal=true,
                      maximized_vertical=true,
                    },
     },
@@ -330,6 +328,9 @@ awful.rules.rules = {
         height = screengeom.height * 0.45
         c:geometry({ x = 20, y = 20, width = width, height = height })
       end,
+    },
+    { rule = { class = "Skype" },
+      properties = { floating = true }
     },
 }
 -- }}}
