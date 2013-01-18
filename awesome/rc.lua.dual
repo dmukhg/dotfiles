@@ -40,6 +40,7 @@ beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 terminal = config.global.terminal
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
+file_manager = "thunar"
 
 modkey = config.global.modkey
 
@@ -213,6 +214,7 @@ globalkeys = awful.util.table.join(
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "e", function () awful.util.spawn(file_manager) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
