@@ -1,0 +1,30 @@
+Widgets( Vicious ):
+
+* Date and Time
+* Volume
+    * left click - toggle xfce4-mixer
+    * right click - toggle mute
+    * scroll - increase/decrease volume
+* MPD
+    * left click - toggle gmpc
+    * right click - toggle play/pause
+    * scroll - change track
+* Gmail
+    * left click - brings up gmail in firefox
+* Load Average
+* Thermal
+* CPU Usage
+* Memory usage
+* File System Usage
+
+Theming :
+
+* Zenburn theme.
+* Lxapperance - GTK theme changer
+
+Extras :
+
+* Run or Raise
+* Scratch clients( think tilda )
+* Desktop right click menu
+* Modal client keys
