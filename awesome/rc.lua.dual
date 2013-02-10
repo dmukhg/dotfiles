@@ -65,8 +65,9 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
-tags[1] = awful.tag({ "dev", "design", "git", "servers" }, 1, layouts[2])
-tags[2] = awful.tag({ "dev", "read", "internet", "media", "four", "five" }, 2, layouts[2])
+tags[1] = awful.tag({ "dev", "design", "git", "servers" }, 1,  layouts[2])
+tags[2] = awful.tag({ "dev", "read", "internet", "media", "five", "six" }, 2, 
+      { layouts[2], layouts[2], layouts[1], layouts[2], layouts[2], layouts[2] } )
 -- }}}
 
 -- {{{ Menu
