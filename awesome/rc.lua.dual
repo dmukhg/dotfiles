@@ -315,7 +315,7 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 3 of screen 2.
     { rule = { class = "Firefox" },
       properties = { tag = tags[2][3] } },
-    -- Gvim always maximized and on tag number 0, 1
+    -- Gvim always maximized
     { rule = { class = "Gvim" }, 
       properties = { maximized_horizontal=true,
                      maximized_vertical=true,
