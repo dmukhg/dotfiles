@@ -1,0 +1,3 @@
+# Ensure that the http proxies are respected in the sudo environment.
+# Indispensable for running pacman, gem and the like 
+Defaults env_keep += "LANG LANGUAGE LINGUAS LC_* http_proxy https_proxy"
