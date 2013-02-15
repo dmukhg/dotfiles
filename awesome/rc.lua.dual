@@ -41,7 +41,7 @@ end
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm -fa \"Crystal\" -fs 11"
+terminal = "xterm -fa \"Crystal\" -fs 12"
 editor = os.getenv("EDITOR") or "gvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -359,9 +359,18 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
+    -- Set Firefox to always map on tags number 3 of screen 2.
     { rule = { class = "Firefox" },
-       properties = { tag = tags[2][3], floating = true } },
+       properties = { tag = tags[2][3],
+                      switchtotag = true,
+                      callback = awful.titlebar.add } },
+    -- GVim should always appear fullscreened on tag 1 of screen 1
+    { rule = { class = "Gvim" },
+       properties = { tag = tags[1][1],
+                      floating = true,
+                      --size_hints_honor = false,
+                      switchtotag = true}
+    }
 }
 -- }}}
 
@@ -430,3 +439,6 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Autostart functionality
+awful.util.spawn_with_shell("~/.autostart")
