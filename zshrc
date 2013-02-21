@@ -37,9 +37,12 @@ alias q="exit"
 # editor
 alias e="gvim --remote-tab-silent"
 
+# Support NVIDIA CUDA apparatus
+export PATH=$PATH:/usr/local/cuda/bin:/usr/local/cuda/open64/bin
+export PATH=$PATH:/usr/local/cuda/nvvm/:/usr/local/cuda
 
-export PATH=$PATH:/home/schatten/bin:/media/zacharius/installers/linux/google_appengine:/usr/lib/android-sdk/tools:/usr/lib/android-sdk/platform-tools
-export TEXINPUTS=$TEXINPUTS:/usr/share/tex-common
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib/:/usr/local/cuda/lib64
+# END NVIDIA conf
 
 export http_proxy=http://144.16.192.245:8080/
 export https_proxy=http://144.16.192.247:8080/
