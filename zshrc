@@ -21,6 +21,7 @@ PS1="%n@%F{green}%m%u%f>"
 # add colors
 #TERM=xterm-256color
 eval `dircolors -b ~/.dircolors`
+
 # little aliases
 alias ls="ls -l --group-directories-first --color=auto -X" # --ignore='*.o'"
 alias snd=alsamixer
@@ -29,17 +30,13 @@ alias reboot="sudo shutdown -r 0"
 alias hib="sudo hibernate"
 alias rt="rm *~"
 alias sl="ls"
-alias g-node="sudo openvpn ~/.g-node/g-node-proxy.conf"
 alias mp="ncmpc"
 alias blog="cd ~/public/blog"
-alias idea="cd ~/public/idealab"
 alias q="exit"
 
 # editor
 alias e="gvim --remote-tab-silent"
 
-# alias to call sorry
-alias sorry="python ~/code/schatten/sorry/sorry/main.py"
 
 export PATH=$PATH:/home/schatten/bin:/media/zacharius/installers/linux/google_appengine:/usr/lib/android-sdk/tools:/usr/lib/android-sdk/platform-tools
 export TEXINPUTS=$TEXINPUTS:/usr/share/tex-common
@@ -47,12 +44,6 @@ export TEXINPUTS=$TEXINPUTS:/usr/share/tex-common
 export http_proxy=http://144.16.192.245:8080/
 export https_proxy=http://144.16.192.247:8080/
 # End of my configs
-
-# Delete ~/Desktop which keeps on popping up for some reason. I
-# suspect firefox but what the hell. This method doesn't seem too
-# memory or resource intensive. But, got to come back to this someday.
-# TODO
-rm -rf /home/schatten/Desktop
 
 # Shell bookmarks https://gist.github.com/835531
 
