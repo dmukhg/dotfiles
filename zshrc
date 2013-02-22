@@ -154,4 +154,4 @@ cd $MARKDIR
 bindkey -v
 
 # === python SimpleHTTPServer shortcut
-alias shttp='python -m SimpleHTTPServer'
+alias shttp='python3 -m http.server'
