@@ -1,6 +1,4 @@
-nm-applet &
 xmodmap /home/nirman/.xmodmap &
 xrdb -load /home/nirman/.Xdefaults &
-export DISPLAY=:0.0; feh --bg-fill /mnt/z/pictures/wallpaper1 &
-export DISPLAY=:0.1; feh --bg-fill /mnt/z/pictures/wallpaper2 &
+eval $(cat ~/.fehbg)
 exit 0
