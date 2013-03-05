@@ -1,6 +1,7 @@
-! Switches Caps Lock and Escape
+! Makes caps-lock as the escape key. I find there is no need for the caps lock.
+! Also, it is less confusing to other users.
 clear Lock
-keysym Escape = Caps_Lock
+! keysym Escape = Caps_Lock
 keysym Caps_Lock = Escape
 add Lock = Caps_Lock
 
