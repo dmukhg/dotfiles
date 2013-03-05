@@ -1,4 +1,0 @@
-xmodmap /home/nirman/.xmodmap &
-xrdb -load /home/nirman/.Xdefaults &
-eval $(cat ~/.fehbg)
-exit 0
