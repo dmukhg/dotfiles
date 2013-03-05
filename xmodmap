@@ -3,7 +3,7 @@
 clear Lock
 ! keysym Escape = Caps_Lock
 keysym Caps_Lock = Escape
-add Lock = Caps_Lock
+! add Lock = Caps_Lock
 
 ! Switches Alt_L and Win_Key
 !clear mod1
