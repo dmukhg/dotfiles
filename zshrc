@@ -34,6 +34,11 @@ alias mp="ncmpc"
 alias blog="cd ~/public/blog"
 alias q="exit"
 
+# Pacman Aliases
+alias pf="pacman -Ss"
+alias pi="sudo pacman -S"
+alias pu="sudo pacman -Sy"
+
 # editor
 alias e="gvim --remote-tab-silent"
 
