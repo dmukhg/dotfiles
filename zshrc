@@ -51,6 +51,7 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib/:/usr/local/cuda/lib
 
 export http_proxy=http://144.16.192.245:8080/
 export https_proxy=http://144.16.192.247:8080/
+export no_proxy="localhost,127.0.0.1,10.*"
 # End of my configs
 
 # Shell bookmarks https://gist.github.com/835531
