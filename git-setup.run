@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Setup the global git configuration parameters on a virgin system
+
+# User details
+git config --global user.name "Dipanjan Mukherjee"
+git config --global user.email "dipanjan.mu@gmail.com"
+
+# Color terminal output
+git config --global color.ui always
+
+# Aliases
+git config --global alias.b "branch --list"
+git config --global alias.d "diff"
+git config --global alias.dc "diff --cached"
+git config --global alias.c "commit"
+git config --global alias.l "log"
+git config --global alias.lo "log --pretty=oneline"
