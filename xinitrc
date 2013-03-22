@@ -16,6 +16,6 @@ fi
 # exec startxfce4
 # ...or the Window Manager of your choice
 eval $(cat ~/.fehbg)
-exec xmodmap /home/nirman/.xmodmap &
+exec xmodmap /home/schatten/.xmodmap &
 exec awesome
-exec xrdb -load /home/nirman/.xdefaults &
+exec xrdb -load /home/schatten/.xdefaults &
