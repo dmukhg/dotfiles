@@ -7,7 +7,7 @@ git config --global user.name "Dipanjan Mukherjee"
 git config --global user.email "dipanjan.mu@gmail.com"
 
 # Color terminal output
-git config --global color.ui always
+git config --global color.ui true
 
 # Aliases
 git config --global alias.b "branch --list"
