@@ -45,6 +45,10 @@ terminal = "xterm -fa \"Crystal\" -fs 10"
 editor = os.getenv("EDITOR") or "gvim"
 editor_cmd = terminal .. " -e " .. editor
 
+-- Other commands that are handy
+volume_control = "pavucontrol"
+file_browser   = "thunar"
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -249,6 +253,8 @@ globalkeys = awful.util.table.join(
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "f", function () awful.util.spawn(file_browser) end),
+    awful.key({ modkey,           }, "v", function () awful.util.spawn(volume_control) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
