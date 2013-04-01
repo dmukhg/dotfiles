@@ -42,6 +42,9 @@ alias pu="sudo pacman -Sy"
 # editor
 alias e="gvim --remote-tab-silent"
 
+# Todo list
+alias todo="gvim ~/.todo"
+
 # Support NVIDIA CUDA apparatus
 export PATH=$PATH:/usr/local/cuda/bin:/usr/local/cuda/open64/bin
 export PATH=$PATH:/usr/local/cuda/nvvm/:/usr/local/cuda
