@@ -17,5 +17,5 @@ fi
 # ...or the Window Manager of your choice
 eval $(cat ~/.fehbg)
 exec xmodmap /home/schatten/.xmodmap &
-exec awesome
 exec xrdb -load /home/schatten/.xdefaults &
+exec awesome
