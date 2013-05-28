@@ -15,7 +15,7 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
+xmodmap /home/dipanjanmukherjee/.xmodmap &
+xrdb -load /home/dipanjanmukherjee/.xdefaults &
 eval $(cat ~/.fehbg)
-exec xmodmap /home/schatten/.xmodmap &
 exec awesome
-exec xrdb -load /home/schatten/.xdefaults &
