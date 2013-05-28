@@ -21,7 +21,8 @@ config = {}
 -- Global settings 
 config.global = {
   theme    = awful.util.getdir("config") .. "/theme.lua",
-  terminal = "xterm -fa \"Crystal\" -fs 11",
+  --terminal = "xterm -fa \"Crystal\" -fs 11",
+  terminal = "gnome-terminal"
   modkey   = "Mod4",
   browser  = "firefox"
 }
@@ -147,7 +148,7 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "bottom", screen = s })
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -358,6 +359,4 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
-
-exec('xmodmap /home/dipanjanmukherjee/.xmodmap')
 -- }}}

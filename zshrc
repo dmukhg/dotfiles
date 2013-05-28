@@ -34,6 +34,9 @@ alias mp="ncmpc"
 alias blog="cd ~/public/blog"
 alias q="exit"
 
+# Flipkart aliases
+alias showlogs="cd /var/log/flipkart/w3"
+
 # Pacman Aliases
 alias pf="pacman -Ss"
 alias pi="sudo pacman -S"
