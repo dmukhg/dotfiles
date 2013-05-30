@@ -36,6 +36,10 @@ alias q="exit"
 
 # Flipkart aliases
 alias showlogs="cd /var/log/flipkart/w3"
+alias flushlogs="rm -r --interactive=never --force /var/log/flipkart/w3/agent/*.log.* /var/log/flipkart/w3/website/*.log.* "
+
+# Add ~/bin to path
+export PATH=$PATH:~/bin
 
 # Pacman Aliases
 alias pf="pacman -Ss"
