@@ -21,8 +21,8 @@ config = {}
 -- Global settings 
 config.global = {
   theme    = awful.util.getdir("config") .. "/theme.lua",
-  --terminal = "xterm -fa \"Crystal\" -fs 11",
-  terminal = "gnome-terminal"
+  terminal = "xterm -fa \"Crystal\" -fs 11",
+  --terminal = "gnome-terminal"
   modkey   = "Mod4",
   browser  = "firefox"
 }
