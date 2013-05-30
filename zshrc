@@ -53,8 +53,8 @@ alias e="gvim --remote-tab-silent"
 alias todo="vim ~/.todo"
 
 # Support NVIDIA CUDA apparatus
-export PATH=$PATH:/usr/local/cuda/bin:/usr/local/cuda/open64/bin
-export PATH=$PATH:/usr/local/cuda/nvvm/:/usr/local/cuda
+#export PATH=$PATH:/usr/local/cuda/bin:/usr/local/cuda/open64/bin
+#export PATH=$PATH:/usr/local/cuda/nvvm/:/usr/local/cuda
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib/:/usr/local/cuda/lib64
 # END NVIDIA conf
