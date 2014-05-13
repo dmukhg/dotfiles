@@ -163,6 +163,10 @@ bindkey -v
 # === python SimpleHTTPServer shortcut
 alias shttp='python3 -m http.server'
 
+# === external Monitor toggle
+alias mm="autorandr --load mobile"
+alias md="autorandr --load docked"
+
 # === Flipkart aliases
 alias rsu="cd ~/repos/ServiceProxyBuild; ./scripts/stop service-proxy; ./scripts/start service-proxy;"
 
