@@ -162,3 +162,17 @@ bindkey -v
 
 # === python SimpleHTTPServer shortcut
 alias shttp='python3 -m http.server'
+
+# === Flipkart aliases
+alias rsu="cd ~/repos/ServiceProxyBuild; ./scripts/stop service-proxy; ./scripts/start service-proxy;"
+
+tagBuild() {
+  env="$1"
+  git tag -m"Promoting to $env." release/$env\-$(date +%Y%m%d-%H%M)-nodeploy
+}
+
+tag() {
+  env="$1"
+  git tag -m"Promoting to $env." release/$env\-$(date +%Y%m%d-%H%M)
+}
+
