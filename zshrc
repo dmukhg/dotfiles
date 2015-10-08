@@ -18,6 +18,9 @@ prompt walters cyan
 
 PS1="%n@%F{green}%m%u%f>"
 
+# Add coreutils on mac
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
 # add colors
 #TERM=xterm-256color
 eval `dircolors -b ~/.dircolors`
