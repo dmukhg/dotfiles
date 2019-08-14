@@ -18,12 +18,18 @@ prompt walters cyan
 
 PS1="%n@%F{green}%m%u%f>"
 
-# Add coreutils on mac
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# For macports
+export PATH=/opt/local/libexec/gnubin/:/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+#export DYLD_LIBRARY_PATH=/usr/lib:/opt/local/lib
+unset DYLD_LIBRARY_PATH
+
+# Report CPU usage for commands running longer than 5 seconds
+REPORTTIME=5
 
 # add colors
 #TERM=xterm-256color
-eval `dircolors -b ~/.dircolors`
+#eval `dircolors -b ~/.dircolors`
 
 # little aliases
 alias ls="ls -l --group-directories-first --color=auto -X" # --ignore='*.o'"
@@ -48,12 +54,8 @@ alias e="gvim --remote-tab-silent"
 # Todo list
 alias todo="vim ~/.todo"
 
-# Support NVIDIA CUDA apparatus
-export PATH=$PATH:/usr/local/cuda/bin:/usr/local/cuda/open64/bin
-export PATH=$PATH:/usr/local/cuda/nvvm/:/usr/local/cuda
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib/:/usr/local/cuda/lib64
-# END NVIDIA conf
+# Virtualenvwrapper
+source /usr/local/bin/virtualenvwrapper.sh to 
 
 export no_proxy="localhost,127.0.0.1,10.*"
 # End of my configs
@@ -159,27 +161,33 @@ function u() {
 
 # The real cd function. 
 read MARKDIR < ~/.mark_dir
-cd $MARKDIR
+#cd $MARKDIR
 # === Vi Mode editing enable
 bindkey -v
 
 # === python SimpleHTTPServer shortcut
 alias shttp='python3 -m http.server'
 
-# === external Monitor toggle
-alias mm="autorandr --load mobile"
-alias md="autorandr --load docked"
+# === alias git to hub to use github from cmdline
+alias git="hub"
 
-# === Flipkart aliases
-alias rsu="cd ~/repos/ServiceProxyBuild; ./scripts/stop service-proxy; ./scripts/start service-proxy;"
+export GOPATH=~/.go_modules
 
-tagBuild() {
-  env="$1"
-  git tag -m"Promoting to $env." release/$env\-$(date +%Y%m%d-%H%M)-nodeploy
-}
+# Locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-tag() {
-  env="$1"
-  git tag -m"Promoting to $env." release/$env\-$(date +%Y%m%d-%H%M)
-}
+# Sublime
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
+export WEBAPP_PROJECT_HOME="/Users/dipanjan/repos/typeset/webapp"
+export RENDERER_PROJECT_HOME="/Users/dipanjan/repos/typeset/renderer"
+
+alias epubcheck="java -jar /usr/local/epubcheck/epubcheck.jar"
+
+# GO Environment
+export GOPATH=$HOME/repos/learning/go
+export PATH=$PATH:$GOPATH/bin
+
+# Blog
+alias publish='function _publish(){ pushd ~/repos/github/dipanjan.blog; git add .; git commit -m"$1"; git push; popd};_publish'
