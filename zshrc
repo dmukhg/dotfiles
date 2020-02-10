@@ -32,16 +32,11 @@ REPORTTIME=5
 #eval `dircolors -b ~/.dircolors`
 
 # little aliases
-alias ls="ls -l --group-directories-first --color=auto -X" # --ignore='*.o'"
-alias snd=alsamixer
-alias halt="sudo shutdown -Ph 0"
-alias reboot="sudo shutdown -r 0"
-alias hib="sudo hibernate"
+alias ls="ls -H -l --group-directories-first --color=auto -X" # --ignore='*.o'"
 alias rt="rm *~"
 alias sl="ls"
-alias mp="ncmpc"
-alias blog="cd ~/public/blog"
-alias q="exit"
+alias diff="colordiff -c"
+alias less="less -r"
 
 # Pacman Aliases
 alias pf="pacman -Ss"
@@ -55,7 +50,7 @@ alias e="gvim --remote-tab-silent"
 alias todo="vim ~/.todo"
 
 # Virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh to 
+# source /usr/local/bin/virtualenvwrapper.sh to 
 
 export no_proxy="localhost,127.0.0.1,10.*"
 # End of my configs
@@ -173,6 +168,9 @@ alias git="hub"
 
 export GOPATH=~/.go_modules
 
+# Android studio sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -180,8 +178,8 @@ export LANG=en_US.UTF-8
 # Sublime
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
-export WEBAPP_PROJECT_HOME="/Users/dipanjan/repos/typeset/webapp"
-export RENDERER_PROJECT_HOME="/Users/dipanjan/repos/typeset/renderer"
+# Add gnucoreutils to path
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 alias epubcheck="java -jar /usr/local/epubcheck/epubcheck.jar"
 
