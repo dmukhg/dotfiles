@@ -44,7 +44,8 @@ alias pi="sudo pacman -S"
 alias pu="sudo pacman -Sy"
 
 # editor
-alias e="gvim --remote-tab-silent"
+alias vi="nvim"
+alias vim="nvim"
 
 # Todo list
 alias todo="vim ~/.todo"
@@ -189,3 +190,14 @@ export PATH=$PATH:$GOPATH/bin
 
 # Blog
 alias publish='function _publish(){ pushd ~/repos/github/dipanjan.blog; git add .; git commit -m"$1"; git push; popd};_publish'
+
+# kubectl aliases
+alias kd="kubectl --context=cen0 -n dev"
+alias kp="kubectl --context=sin0 -n prod"
+
+# Java 
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home/"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
