@@ -1,0 +1,41 @@
+config defaultToCurrentScreen true
+
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# define screen positions
+alias centerFocus70             move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.7;screenSizeY*0.7
+alias centerFocus80             move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.8;screenSizeY*0.8
+alias centerFocus90             move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.9;screenSizeY*0.9
+alias centerFocusFull           move screenOriginX;screenOriginY				 			screenSizeX;screenSizeY
+alias musicPlayer		move screenOriginX+(screenSizeX*0.7);screenOriginY+(screenSizeY*0.2)			screenSizeX*0.25;screenSizeY*0.6
+alias leftHalf			move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY
+alias rightHalf			move screenOriginX+screenSizeX*0.5;screenOriginY					screenSizeX*0.5;screenSizeY
+
+# define rowser
+alias browserFocus70_1          move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.7;screenSizeY*0.7
+alias browserFocus70_2 		${centerFocus70}
+alias browserFocus70_3          move screenOriginX+(screenSizeX*0.20);screenOriginY+(screenSizeY*0.20) 			screenSizeX*0.7;screenSizeY*0.7
+
+
+
+# ======================================
+# Keybindings
+# ======================================
+# First, app specific bindings
+# I have 3 Browser profiles, like to lay them out diagonally, with the same sizes.
+bind 1:f5,ctrl ${browserFocus70_1}
+bind 2:f5,ctrl ${browserFocus70_2}
+bind 3:f5,ctrl ${browserFocus70_3}
+bind m:f5,ctrl ${musicPlayer}
+
+# Next, generic bindings
+bind 7:f5 ${centerFocus70}
+bind 8:f5 ${centerFocus80}
+bind 9:f5 ${centerFocus90}
+bind 0:f5 ${centerFocusFull}
+bind [:f5 ${leftHalf}
+bind ]:f5 ${rightHalf}
+
