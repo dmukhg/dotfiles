@@ -5,6 +5,9 @@ config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 
+# Define keycombos
+alias hyper cmd;alt
+
 # define screen positions
 alias centerFocus70             move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.7;screenSizeY*0.7
 alias centerFocus80             move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.8;screenSizeY*0.8
@@ -13,6 +16,10 @@ alias centerFocusFull           move screenOriginX;screenOriginY				 			screenSi
 alias musicPlayer		move screenOriginX+(screenSizeX*0.7);screenOriginY+(screenSizeY*0.2)			screenSizeX*0.25;screenSizeY*0.6
 alias leftHalf			move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY
 alias rightHalf			move screenOriginX+screenSizeX*0.5;screenOriginY					screenSizeX*0.5;screenSizeY
+alias quadNW			move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY*0.5
+alias quadNE			move screenOriginX+screenSizeX*0.5;screenOriginY				 	screenSizeX*0.5;screenSizeY*0.5
+alias quadSW			move screenOriginX;screenOriginY+screenSizeY*0.5					screenSizeX*0.5;screenSizeY*0.5
+alias quadSE			move screenOriginX+screenSizeX*0.5;screenOriginY+screenSizeY*0.5		        screenSizeX*0.5;screenSizeY*0.5
 
 # define rowser
 alias browserFocus70_1          move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.7;screenSizeY*0.7
@@ -31,11 +38,22 @@ bind 2:f5,ctrl ${browserFocus70_2}
 bind 3:f5,ctrl ${browserFocus70_3}
 bind m:f5,ctrl ${musicPlayer}
 
-# Next, generic bindings
+# Next, generic movement bindings
 bind 7:f5 ${centerFocus70}
 bind 8:f5 ${centerFocus80}
 bind 9:f5 ${centerFocus90}
 bind 0:f5 ${centerFocusFull}
 bind [:f5 ${leftHalf}
 bind ]:f5 ${rightHalf}
+bind l:f5 ${quadSE}
+bind h:f5 ${quadSW}
+bind j:f5 ${quadNW}
+bind k:f5 ${quadNE}
+
+
+# Bind focus to specific apps
+bind b:${hyper} focus 'Google Chrome'
+bind i:${hyper} focus 'IntelliJ IDEA'
+bind m:${hyper} focus 'YouTube Music'
+bind s:${hyper} focus 'Slack'
 
