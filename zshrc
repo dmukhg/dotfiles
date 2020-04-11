@@ -29,7 +29,7 @@ REPORTTIME=5
 
 # add colors
 #TERM=xterm-256color
-#eval `dircolors -b ~/.dircolors`
+eval `dircolors -b ~/.dircolors`
 
 # little aliases
 alias ls="ls -H -l --group-directories-first --color=auto -X" # --ignore='*.o'"
@@ -46,12 +46,7 @@ alias pu="sudo pacman -Sy"
 # editor
 alias vi="nvim"
 alias vim="nvim"
-
-# Todo list
-alias todo="vim ~/.todo"
-
-# Virtualenvwrapper
-# source /usr/local/bin/virtualenvwrapper.sh to 
+alias vimpackdir=".local/share/nvim/site/pack/vendor/start"
 
 export no_proxy="localhost,127.0.0.1,10.*"
 # End of my configs
