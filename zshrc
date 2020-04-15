@@ -29,10 +29,10 @@ REPORTTIME=5
 
 # add colors
 #TERM=xterm-256color
-eval `dircolors -b ~/.dircolors`
+eval "`gdircolors -b ~/.dircolors`"
 
 # little aliases
-alias ls="ls -H -l --group-directories-first --color=auto -X" # --ignore='*.o'"
+alias ls="ls -H -l --group-directories-first --color=always -X" # --ignore='*.o'"
 alias rt="rm *~"
 alias sl="ls"
 alias diff="colordiff -c"
