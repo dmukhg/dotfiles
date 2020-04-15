@@ -36,7 +36,6 @@ alias browserFocus70_3          move screenOriginX+(screenSizeX*0.20);screenOrig
 bind 1:f5,ctrl ${browserFocus70_1}
 bind 2:f5,ctrl ${browserFocus70_2}
 bind 3:f5,ctrl ${browserFocus70_3}
-bind m:f5,ctrl ${musicPlayer}
 
 # Next, generic movement bindings
 bind 7:f5 ${centerFocus70}
@@ -54,7 +53,7 @@ bind k:f5 ${quadNE}
 # Bind focus to specific apps
 bind b:${hyper} focus 'Google Chrome'
 bind i:${hyper} focus 'IntelliJ IDEA'
-bind m:${hyper} focus 'YouTube Music'
+bind y:${hyper} focus 'YouTube Music'
 bind s:${hyper} focus 'Slack'
 bind n:${hyper} focus 'Notion'
 bind g:${hyper} focus 'Linear'
