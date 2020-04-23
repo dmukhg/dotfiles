@@ -3,13 +3,12 @@ zstyle :compinstall filename '/home/schatten/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
+
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-# End of lines configured by zsh-newuser-install
-# Begin my configs
+HISTSIZE=50000
+SAVEHIST=50000
+# TODO add history configuration to ensure cd / ls etc are not stored
+
 setopt autocd
 
 autoload -U promptinit
