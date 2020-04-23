@@ -51,6 +51,8 @@ export no_proxy="localhost,127.0.0.1,10.*"
 # End of my configs
 
 # Shell bookmarks https://gist.github.com/835531
+alias ur=~/repos/udaan
+alias pr=~/repos/personal
 
 function _uh { [[ -z $DEV ]]; return $? }
 
@@ -186,6 +188,7 @@ alias publish='function _publish(){ pushd ~/repos/github/dipanjan.blog; git add 
 # kubectl aliases
 alias kd="kubectl --context=cen0 -n dev"
 alias kp="kubectl --context=sin0 -n prod"
+alias km="kubectl --context=sin0 -n monitoring"
 
 # Java 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home/"
