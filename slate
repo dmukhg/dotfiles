@@ -33,12 +33,12 @@ alias browserFocus70_3          move screenOriginX+(screenSizeX*0.20);screenOrig
 # ======================================
 # First, app specific bindings
 # I have 3 Browser profiles, like to lay them out diagonally, with the same sizes.
-bind 1:f5,ctrl ${browserFocus70_1}
-bind 2:f5,ctrl ${browserFocus70_2}
-bind 3:f5,ctrl ${browserFocus70_3}
+bind 5:f5 ${browserFocus70_1}
+# The middle profile is the same as centerFocus_70, so use the existing binding for it.
+bind 7:f5 ${browserFocus70_3}
 
 # Next, generic movement bindings
-bind 7:f5 ${centerFocus70}
+bind 6:f5 ${centerFocus70} # Not 60, more in line with scattered browser layout
 bind 8:f5 ${centerFocus80}
 bind 9:f5 ${centerFocus90}
 bind 0:f5 ${centerFocusFull}
@@ -57,4 +57,5 @@ bind y:${hyper} focus 'YouTube Music'
 bind s:${hyper} focus 'Slack'
 bind n:${hyper} focus 'Notion'
 bind g:${hyper} focus 'Linear'
+bind t:${hyper} focus 'iTerm2'
 
