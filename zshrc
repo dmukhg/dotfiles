@@ -162,8 +162,6 @@ alias shttp='python3 -m http.server'
 # === alias git to hub to use github from cmdline
 alias git="hub"
 
-export GOPATH=~/.go_modules
-
 # Android studio sdk
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
@@ -180,7 +178,7 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 alias epubcheck="java -jar /usr/local/epubcheck/epubcheck.jar"
 
 # GO Environment
-export GOPATH=$HOME/repos/learning/go
+export GOPATH=$HOME/repos/goworks
 export PATH=$PATH:$GOPATH/bin
 
 # Blog
