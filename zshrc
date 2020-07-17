@@ -163,6 +163,9 @@ alias shttp='python3 -m http.server'
 # === alias git to hub to use github from cmdline
 alias git="hub"
 
+# === Use nord theme for bat output
+alias bat="bat --theme=Nord"
+
 # Android studio sdk
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
@@ -198,3 +201,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Maven Get dependency
+alias mvnget="mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
+    -Dartifact=$1"
+
+# Add jenkins scripts to build path
+export PATH=$PATH:/Users/dipanjanmukherjee/repos/udaan/udaan-k8s-bootstrap/apps/jenkins/scripts
+
+# Use pyenv to determine versions
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
