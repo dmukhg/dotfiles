@@ -9,45 +9,62 @@ config windowHintsSpread true
 alias hyper cmd;alt
 
 # define screen positions
-alias centerFocus70             move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.7;screenSizeY*0.7
-alias centerFocus80             move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.8;screenSizeY*0.8
-alias centerFocus90             move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.9;screenSizeY*0.9
-alias centerFocusFull           move screenOriginX;screenOriginY				 			screenSizeX;screenSizeY
-alias musicPlayer		move screenOriginX+(screenSizeX*0.7);screenOriginY+(screenSizeY*0.2)			screenSizeX*0.25;screenSizeY*0.6
-alias leftHalf			move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY
-alias rightHalf			move screenOriginX+screenSizeX*0.5;screenOriginY					screenSizeX*0.5;screenSizeY
-alias quadNW			move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY*0.5
-alias quadNE			move screenOriginX+screenSizeX*0.5;screenOriginY				 	screenSizeX*0.5;screenSizeY*0.5
-alias quadSW			move screenOriginX;screenOriginY+screenSizeY*0.5					screenSizeX*0.5;screenSizeY*0.5
-alias quadSE			move screenOriginX+screenSizeX*0.5;screenOriginY+screenSizeY*0.5		        screenSizeX*0.5;screenSizeY*0.5
+alias centerFocus70                          move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.7;screenSizeY*0.7
+alias centerFocus80                          move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.8;screenSizeY*0.8
+alias centerFocus90                          move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.9;screenSizeY*0.9
+alias centerFocusFull                        move screenOriginX;screenOriginY				 			screenSizeX;screenSizeY
+alias musicPlayer                            move screenOriginX+(screenSizeX*0.7);screenOriginY+(screenSizeY*0.2)			screenSizeX*0.25;screenSizeY*0.6
+alias leftHalf                               move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY
+alias rightHalf                              move screenOriginX+screenSizeX*0.5;screenOriginY					screenSizeX*0.5;screenSizeY
+alias topHalf                                move screenOriginX;screenOriginY							screenSizeX;screenSizeY*0.5
+alias botHalf                                move screenOriginX;screenOriginY+screenSizeY*0.5							screenSizeX;screenSizeY*0.5
+alias quadNW                                 move screenOriginX;screenOriginY							screenSizeX*0.5;screenSizeY*0.5
+alias quadNE                                 move screenOriginX+screenSizeX*0.5;screenOriginY				 	screenSizeX*0.5;screenSizeY*0.5
+alias quadSW                                 move screenOriginX;screenOriginY+screenSizeY*0.5					screenSizeX*0.5;screenSizeY*0.5
+alias quadSE                                 move screenOriginX+screenSizeX*0.5;screenOriginY+screenSizeY*0.5		        screenSizeX*0.5;screenSizeY*0.5
 
-# define rowser
-alias browserFocus70_1          move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.7;screenSizeY*0.7
-alias browserFocus70_2 		${centerFocus70}
-alias browserFocus70_3          move screenOriginX+(screenSizeX*0.20);screenOriginY+(screenSizeY*0.20) 			screenSizeX*0.7;screenSizeY*0.7
+# define center-offset positions
+alias centerOffset70_1                       move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.7;screenSizeY*0.7
+alias centerOffset70_2 		                 ${centerFocus70}
+alias centerOffset70_3                       move screenOriginX+(screenSizeX*0.20);screenOriginY+(screenSizeY*0.20) 			screenSizeX*0.7;screenSizeY*0.7
+alias centerOffset80_1                       move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.8;screenSizeY*0.8
+alias centerOffset80_2 		                 ${centerFocus80}
+alias centerOffset80_3                       move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.8;screenSizeY*0.8
 
+alias pillarLeft                             move screenOriginX;screenOriginY   screenSizeX*0.15;screenSizeY
+alias pillarRight                            move screenOriginX+(screenSizeX*0.85);screenOriginY   screenSizeX*0.15;screenSizeY
 
+# define reading mode
+layout reading 'Google Chrome' move screenOriginX+screenSizeX*0.3;screenOriginY                 screenSizeX*0.7;screenSizeY
+layout reading 'Notion' move screenOriginX;screenOriginY     screenSizeX*0.3;screenSizeY
+
+# define nofocus mode
+layout nofocus 'Slack' ${quadSW}
+layout nofocus 'Linear' ${quadNW}
+layout nofocus 'Google Chrome' ${rightHalf}
 
 # ======================================
 # Keybindings
 # ======================================
-# First, app specific bindings
-# I have 3 Browser profiles, like to lay them out diagonally, with the same sizes.
-bind 5:f5 ${browserFocus70_1}
-# The middle profile is the same as centerFocus_70, so use the existing binding for it.
-bind 7:f5 ${browserFocus70_3}
+bind 7:f5 ${centerOffset70_1} 
+bind 8:f5 ${centerOffset70_2}
+bind 9:f5 ${centerOffset70_3}
+bind u:f5 ${centerOffset80_1}
+bind i:f5 ${centerOffset80_2}
+bind o:f5 ${centerOffset80_3}
+bind p:f5 ${centerFocus90}
 
-# Next, generic movement bindings
-bind 6:f5 ${centerFocus70} # Not 60, more in line with scattered browser layout
-bind 8:f5 ${centerFocus80}
-bind 9:f5 ${centerFocus90}
-bind 0:f5 ${centerFocusFull}
 bind [:f5 ${leftHalf}
 bind ]:f5 ${rightHalf}
 bind l:f5 ${quadSE}
 bind h:f5 ${quadSW}
 bind j:f5 ${quadNW}
 bind k:f5 ${quadNE}
+bind v:f5 ${botHalf}
+bind c:f5 ${topHalf}
+
+bind /:ctrl layout reading
+bind .:ctrl layout nofocus
 
 
 # Bind focus to specific apps
