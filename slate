@@ -9,6 +9,7 @@ config windowHintsSpread true
 alias hyper cmd;alt
 
 # define screen positions
+alias fullScreen                             move screenOriginX;screenOriginY       screenSizeX;screenSizeY
 alias centerFocus70                          move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.7;screenSizeY*0.7
 alias centerFocus80                          move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.8;screenSizeY*0.8
 alias centerFocus90                          move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.9;screenSizeY*0.9
@@ -65,6 +66,7 @@ bind c:f5 ${topHalf}
 
 bind /:ctrl layout reading
 bind .:ctrl layout nofocus
+bind 0:${hyper} ${fullScreen}
 
 
 # Bind focus to specific apps
