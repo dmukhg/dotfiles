@@ -168,6 +168,8 @@ alias bat="bat --theme=Nord"
 
 # Android studio sdk
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
 
 # Locale
 export LC_ALL=en_US.UTF-8
