@@ -6,7 +6,7 @@ config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 
 # Define keycombos
-alias hyper cmd;alt
+alias hyper cmd;alt;ctrl
 
 # define screen positions
 alias fullScreen                             move screenOriginX;screenOriginY       screenSizeX;screenSizeY
@@ -47,22 +47,22 @@ layout nofocus 'Google Chrome' ${rightHalf}
 # ======================================
 # Keybindings
 # ======================================
-bind 7:f5 ${centerOffset70_1} 
-bind 8:f5 ${centerOffset70_2}
-bind 9:f5 ${centerOffset70_3}
-bind u:f5 ${centerOffset80_1}
-bind i:f5 ${centerOffset80_2}
-bind o:f5 ${centerOffset80_3}
-bind p:f5 ${centerFocus90}
+bind 7:${hyper} ${centerOffset70_1} 
+bind 8:${hyper} ${centerOffset70_2}
+bind 9:${hyper} ${centerOffset70_3}
+bind u:${hyper} ${centerOffset80_1}
+bind i:${hyper} ${centerOffset80_2}
+bind o:${hyper} ${centerOffset80_3}
+bind p:${hyper} ${centerFocus90}
 
-bind [:f5 ${leftHalf}
-bind ]:f5 ${rightHalf}
-bind l:f5 ${quadSE}
-bind h:f5 ${quadSW}
-bind j:f5 ${quadNW}
-bind k:f5 ${quadNE}
-bind v:f5 ${botHalf}
-bind c:f5 ${topHalf}
+bind [:${hyper} ${leftHalf}
+bind ]:${hyper} ${rightHalf}
+bind l:${hyper} ${quadSE}
+bind h:${hyper} ${quadSW}
+bind j:${hyper} ${quadNW}
+bind k:${hyper} ${quadNE}
+bind v:${hyper} ${botHalf}
+bind c:${hyper} ${topHalf}
 
 bind /:ctrl layout reading
 bind .:ctrl layout nofocus
