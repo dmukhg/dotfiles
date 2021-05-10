@@ -23,11 +23,15 @@ alias quadNW                                 move screenOriginX;screenOriginY			
 alias quadNE                                 move screenOriginX+screenSizeX*0.5;screenOriginY				 	screenSizeX*0.5;screenSizeY*0.5
 alias quadSW                                 move screenOriginX;screenOriginY+screenSizeY*0.5					screenSizeX*0.5;screenSizeY*0.5
 alias quadSE                                 move screenOriginX+screenSizeX*0.5;screenOriginY+screenSizeY*0.5		        screenSizeX*0.5;screenSizeY*0.5
+alias screenshareAspectRatio                 move screenOriginX+screenSizeX*0.05;screenOriginY+screenSizeY*0.05         screenSizeX*0.5;screenSizeY*0.65
 
 # define center-offset positions
+alias centerOffset70_0                       move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.7;screenSizeY*0.7
 alias centerOffset70_1                       move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.7;screenSizeY*0.7
 alias centerOffset70_2 		                 ${centerFocus70}
 alias centerOffset70_3                       move screenOriginX+(screenSizeX*0.20);screenOriginY+(screenSizeY*0.20) 			screenSizeX*0.7;screenSizeY*0.7
+alias centerOffset70_4                       move screenOriginX+(screenSizeX*0.25);screenOriginY+(screenSizeY*0.25) 			screenSizeX*0.7;screenSizeY*0.7
+
 alias centerOffset80_1                       move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.8;screenSizeY*0.8
 alias centerOffset80_2 		                 ${centerFocus80}
 alias centerOffset80_3                       move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.8;screenSizeY*0.8
@@ -37,23 +41,36 @@ alias pillarRight                            move screenOriginX+(screenSizeX*0.8
 
 # define reading mode
 layout reading 'Google Chrome' move screenOriginX+screenSizeX*0.3;screenOriginY                 screenSizeX*0.7;screenSizeY
+layout reading 'VS Code @ FB' move screenOriginX+screenSizeX*0.3;screenOriginY                 screenSizeX*0.7;screenSizeY
 layout reading 'Notion' move screenOriginX;screenOriginY     screenSizeX*0.3;screenSizeY
 
 # define nofocus mode
-layout nofocus 'Slack' ${quadSW}
+layout nofocus 'Workplace Chat' ${quadSW}
 layout nofocus 'Linear' ${quadNW}
 layout nofocus 'Google Chrome' ${rightHalf}
+
+# define cascade
+layout cascade 'Notion'     ${centerOffset70_0}
+layout cascade 'Quip'   ${centerOffset70_1}
+layout cascade 'Workplace Chat' ${centerOffset70_2}
+layout cascade 'Google Chrome' ${centerOffset70_3}
+layout cascade 'Firefox' ${centerOffset70_3}
+layout cascade 'Mail' ${centerOffset70_4}
 
 # ======================================
 # Keybindings
 # ======================================
+bind 6:${hyper} ${centerOffset70_0} 
 bind 7:${hyper} ${centerOffset70_1} 
 bind 8:${hyper} ${centerOffset70_2}
 bind 9:${hyper} ${centerOffset70_3}
+bind 0:${hyper} ${centerOffset70_4} 
+
 bind u:${hyper} ${centerOffset80_1}
 bind i:${hyper} ${centerOffset80_2}
 bind o:${hyper} ${centerOffset80_3}
 bind p:${hyper} ${centerFocus90}
+bind w:${hyper} ${screenshareAspectRatio}
 
 bind [:${hyper} ${leftHalf}
 bind ]:${hyper} ${rightHalf}
@@ -65,16 +82,18 @@ bind v:${hyper} ${botHalf}
 bind c:${hyper} ${topHalf}
 
 bind /:ctrl layout reading
-bind .:ctrl layout nofocus
-bind 0:${hyper} ${fullScreen}
+bind .:ctrl layout cascade 
+bind -:${hyper} ${fullScreen}
 
 
 # Bind focus to specific apps
 bind b:${hyper} focus 'Google Chrome'
 bind i:${hyper} focus 'IntelliJ IDEA'
 bind y:${hyper} focus 'YouTube Music'
-bind s:${hyper} focus 'Slack'
+bind s:${hyper} focus 'Workplace Chat'
+bind a:${hyper} focus 'Mail'
 bind n:${hyper} focus 'Notion'
 bind g:${hyper} focus 'Linear'
 bind t:${hyper} focus 'iTerm2'
-
+bind m:${hyper} focus 'Mail'
+bind q:${hyper} focus 'Quip'
