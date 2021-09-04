@@ -56,6 +56,7 @@ layout cascade 'Workplace Chat' ${centerOffset70_2}
 layout cascade 'Google Chrome' ${centerOffset70_3}
 layout cascade 'Firefox' ${centerOffset70_3}
 layout cascade 'Mail' ${centerOffset70_4}
+layout cascade 'Slack' ${centerOffset70_4}
 
 # ======================================
 # Keybindings
