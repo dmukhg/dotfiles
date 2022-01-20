@@ -10,6 +10,7 @@ alias hyper cmd;alt;ctrl
 
 # define screen positions
 alias fullScreen                             move screenOriginX;screenOriginY       screenSizeX;screenSizeY
+alias fullScreenOnLeft                       move screenOriginX;screenOriginY       screenSizeX;screenSizeY         0
 alias centerFocus70                          move screenOriginX+(screenSizeX*0.15);screenOriginY+(screenSizeY*0.15) 			screenSizeX*0.7;screenSizeY*0.7
 alias centerFocus80                          move screenOriginX+(screenSizeX*0.1);screenOriginY+(screenSizeY*0.1) 			screenSizeX*0.8;screenSizeY*0.8
 alias centerFocus90                          move screenOriginX+(screenSizeX*0.05);screenOriginY+(screenSizeY*0.05) 			screenSizeX*0.9;screenSizeY*0.9
@@ -46,17 +47,32 @@ layout reading 'Notion' move screenOriginX;screenOriginY     screenSizeX*0.3;scr
 
 # define nofocus mode
 layout nofocus 'Workplace Chat' ${quadSW}
+layout nofocus 'Safari' ${quadSW}
 layout nofocus 'Linear' ${quadNW}
 layout nofocus 'Google Chrome' ${rightHalf}
 
-# define cascade
+# define cascade for screen right
 layout cascade 'Notion'     ${centerOffset70_0}
 layout cascade 'Quip'   ${centerOffset70_1}
-layout cascade 'Workplace Chat' ${centerOffset70_2}
+layout cascade 'Safari' ${centerOffset70_2}
 layout cascade 'Google Chrome' ${centerOffset70_3}
 layout cascade 'Firefox' ${centerOffset70_3}
-layout cascade 'Mail' ${centerOffset70_4}
-layout cascade 'Slack' ${centerOffset70_4}
+# Comment out stuff below if using multiple screens.
+layout cascade 'Slack' ${centerOffset70_0}
+layout cascade 'Workplace Chat' ${centerOffset70_1}
+layout cascade 'Mail' ${centerOffset70_2}
+layout cascade 'Microsoft Outlook' ${centerOffset70_3}
+layout cascade 'Notes' ${rightHalf}
+
+
+
+# Cascade screen left. Uncomment if using multiple screens.
+# layout cascade 'Slack' ${fullScreenOnLeft}
+# layout cascade 'Workplace Chat' ${fullScreenOnLeft}
+# layout cascade 'Mail' ${fullScreenOnLeft}
+# layout cascade 'Microsoft Outlook' ${fullScreenOnLeft}
+# layout cascade 'Notes' ${fullScreenOnLeft}
+
 
 # ======================================
 # Keybindings
